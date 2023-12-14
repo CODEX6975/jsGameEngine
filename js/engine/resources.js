@@ -15,7 +15,7 @@ const AudioFiles = {
 Images.player.src = './resources/images/player/player.png'; // Update the image path
 
 // Set the source of the enemy image.
-Images.enemy.src = './resources/images/enemy/enemy.png'; // Update the image path
+Images.enemy.src = './resources/images/enemy/enemy2.png'; // Update the image path
 
 // Export the Images and AudioFiles objects so they can be imported and used in other modules.
 export { Images, AudioFiles };
