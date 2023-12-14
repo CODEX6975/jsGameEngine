@@ -4,7 +4,7 @@ import Component from './component.js';
 // The Renderer class extends Component and handles the visual representation of a game object.
 class Renderer extends Component {
   // The constructor initializes the renderer component with optional color, width, height, and image.
-  constructor(color = 'white', width = 50, height = 50, image = null) {
+  constructor(color = 'white', width = 25, height = 25, image = null) {
     super(); // Call the parent constructor.
     this.color = color; // Initialize the color.
     this.width = width; // Initialize the width.
