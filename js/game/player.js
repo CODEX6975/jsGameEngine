@@ -20,11 +20,11 @@ class Player extends GameObject {
     this.addComponent(new Input()); // Add input for handling user input
     // Initialize all the player specific properties
     this.direction = 1;
-    this.lives = 3;
+    this.lives = 1;
     this.score = 0;
     this.isOnPlatform = false;
     this.isJumping = false;
-    this.jumpForce = 400;
+    this.jumpForce = 250;
     this.jumpTime = 0.3;
     this.jumpTimer = 0;
     this.isInvulnerable = false;
@@ -41,10 +41,10 @@ class Player extends GameObject {
     
     // Handle player movement
     if (!this.isGamepadMovement && input.isKeyDown('ArrowRight')) {
-      physics.velocity.x = 100;
+      physics.velocity.x = 200;
       this.direction = -1;
     } else if (!this.isGamepadMovement && input.isKeyDown('ArrowLeft')) {
-      physics.velocity.x = -100;
+      physics.velocity.x = -200;
       this.direction = 1;
     } else if (!this.isGamepadMovement) {
       physics.velocity.x = 0;
