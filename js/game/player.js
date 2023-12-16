@@ -25,7 +25,7 @@ class Player extends GameObject {
     this.isOnPlatform = false;
     this.isJumping = false;
     this.jumpForce = 250;
-    this.jumpTime = 0.3;
+    this.jumpTime = 0.1;
     this.jumpTimer = 0;
     this.isInvulnerable = false;
     this.isGamepadMovement = false;
