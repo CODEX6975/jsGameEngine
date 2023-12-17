@@ -30,6 +30,8 @@ class Player extends GameObject {
     this.isInvulnerable = false;
     this.isGamepadMovement = false;
     this.isGamepadJump = false;
+    this.jumpSound = new Audio('/resources/Audio/Jump.wav');
+    this.collectSound = new Audio('/resources/Audio/Collect.wav');
   }
 
   // The update function runs every frame and contains game logic
@@ -151,6 +153,7 @@ class Player extends GameObject {
       this.jumpTimer = this.jumpTime;
       this.getComponent(Physics).velocity.y = -this.jumpForce;
       this.isOnPlatform = false;
+      this.jumpSound.play();
     }
   }
   
@@ -179,6 +182,7 @@ class Player extends GameObject {
     this.score += collectible.value;
     console.log(`Score: ${this.score}`);
     this.emitCollectParticles(collectible);
+    this.collectSound.play();
   }
 
   emitCollectParticles() {
