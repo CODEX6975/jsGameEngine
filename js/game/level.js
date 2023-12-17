@@ -19,7 +19,7 @@ class Level extends Game {
     this.addGameObject(player);
     
     // Add the player UI object to the game
-    const playerUI = new PlayerUI(10, 10); 
+    const playerUI = new PlayerUI(30, 30); 
     this.addGameObject(playerUI);
 
     // Set the game's camera target to the player
@@ -51,8 +51,9 @@ class Level extends Game {
     }
 
     // Create collectibles and add them to the game
-    this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
-  
+    this.addGameObject(new Collectible(340, this.canvas.height - 200, 20, 20));
+    this.addGameObject(new Collectible(50, this.canvas.height - 50, 20, 20));
+    this.addGameObject(new Collectible(this.canvas.width -100, 100, 20, 20));
   }
   
 }
