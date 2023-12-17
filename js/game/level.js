@@ -14,6 +14,10 @@ class Level extends Game {
     // Call the constructor of the superclass (Game) with the canvas ID
     super(canvasId);
     
+    this.timeRemaining = 60; // start timer of 60 seconds
+    this.collectedCollectibles = 0; // start with collected coins 0
+
+
     // Create a player object and add it to the game
     const player = new Player(this.canvas.width / 2 - 25, this.canvas.height / 2 - 25);
     this.addGameObject(player);
@@ -56,7 +60,29 @@ class Level extends Game {
     this.addGameObject(new Collectible(this.canvas.width -100, 100, 20, 20));
   }
   
+  update(deltaTime) {
+    this.timeRemaining -= deltaTime; //updating timer
+
+    //check for progress
+    if (this.timeRemaining <= 0) {
+      this.resetGame(); //game reset if no time left
+    }
+
+    //check for collectibles
+    if (this.collectedCollectibles >= 3) {
+      console.log('You win!');
+    }
+
+    super.update(deltaTime);
+  }
+
+  resetGame() {
+    //reload the game
+    window.location.reload();
+  }
 }
+
+
 
 // Export the Level class as the default export of this module
 export default Level;
