@@ -17,9 +17,9 @@ class Camera {
     this.y = 0;
   }
 
-  // The update method adjusts the camera's position to center on the target object. It's called typically in the game's update loop.
+  // The update method adjusts the camera's position to center on the target object.
   update() {
- // Set the camera's position to the fixed position.
+ //Set the camera's position to the fixed position.
  this.x = this.fixedX - this.width / 2;
  this.y = this.fixedY - this.height / 2;
   }
